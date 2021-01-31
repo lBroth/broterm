@@ -1,9 +1,10 @@
-import React, {ChangeEvent, KeyboardEvent, useRef, useState} from 'react';
-import './App.css';
-import Commands from '../command/core';
-import {HistoryObjectType} from "../command/index.d";
+import React, {ChangeEvent, KeyboardEvent, useRef, useState} from 'react'
+import './App.css'
+import Commands from '../command/core'
+import {HistoryObjectType} from "../command/index.d"
+import * as packageJson from "../../package.json"
 
-const TERMINAL_COMMAND_PREFIX = "boss # "
+const TERMINAL_COMMAND_PREFIX = `${packageJson.name} ~ % `
 
 
 function App() {

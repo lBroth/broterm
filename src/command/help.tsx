@@ -1,11 +1,11 @@
 import {CommandObjectType, CommandType, CommandTypeDescription} from "./index.d"
-import * as packageJSON from "../../package.json"
+import * as packageJson from "../../package.json"
 
 function commandTypeToString() {
-	return `${packageJSON.name} version ${packageJSON.version}\n` +
+	return `${packageJson.name} version ${packageJson.version}\n` +
 		"Available commands:" +
 		Object.values(CommandType)
-		// @ts-ignore // TODO - type
+		// @ts-ignore // TODO - refactor next line
 		.map((c) => "\n - " + c + ": " + CommandTypeDescription[c.toUpperCase()])
 		.join("") +
 		"\n"
