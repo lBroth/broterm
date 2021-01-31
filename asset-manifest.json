@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/broterm/static/css/main.34b88030.chunk.css",
-    "main.js": "/broterm/static/js/main.5f89a091.chunk.js",
-    "main.js.map": "/broterm/static/js/main.5f89a091.chunk.js.map",
+    "main.js": "/broterm/static/js/main.792c46fd.chunk.js",
+    "main.js.map": "/broterm/static/js/main.792c46fd.chunk.js.map",
     "runtime-main.js": "/broterm/static/js/runtime-main.3adf0ebb.js",
     "runtime-main.js.map": "/broterm/static/js/runtime-main.3adf0ebb.js.map",
     "static/js/2.0a1f98da.chunk.js": "/broterm/static/js/2.0a1f98da.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.3adf0ebb.js",
     "static/js/2.0a1f98da.chunk.js",
     "static/css/main.34b88030.chunk.css",
-    "static/js/main.5f89a091.chunk.js"
+    "static/js/main.792c46fd.chunk.js"
   ]
 }
