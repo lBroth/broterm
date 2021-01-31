@@ -84,7 +84,7 @@ function App() {
               color: "#00ff00",
               padding: 8,
               fontFamily: "courier new",
-              height: "100vh",
+              height: "100%",
               width: "100%",
               fontWeight: 100
           }}>
