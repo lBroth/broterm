@@ -76,19 +76,8 @@ function App() {
       <div
           onClick={() => setFocus()}
           className="terminal"
-          style={{
-              textAlign: "left",
-              fontSize: 16,
-              backgroundColor: "#000",
-              border: "1px solid #000",
-              color: "#00ff00",
-              padding: 8,
-              fontFamily: "courier new",
-              height: "100vh",
-              width: "100%",
-              fontWeight: 100
-          }}>
-              <div>
+      >
+              <div style={{padding: 8}}>
                   {
                       history.map((c, i) => {
                           return (
