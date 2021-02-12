@@ -2,9 +2,9 @@ import React from 'react';
 import {fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders broterm input ', () => {
   render(<App />);
-  const app = screen.getByText(/boss #/i);
+  const app = screen.getByText(/broterm ~ %/i);
   expect(app).toBeInTheDocument();
 
   const input = screen.getByTestId("broterm-input");
@@ -16,6 +16,6 @@ test('renders learn react link', () => {
 
 
   // TODO - delete test error
-  const error = screen.getByTestId("error");
-  expect(error).toBeInTheDocument();
+  // const error = screen.getByTestId("error");
+  // expect(error).toBeInTheDocument();
 });
