@@ -10,6 +10,7 @@ const TERMINAL_COMMAND_PREFIX = `${packageJson.name} ~ % `
 function App() {
   const [currentCommand, setCurrentCommand] = useState("");
   const [history, setHistory] = useState<HistoryObjectType[]>([])
+  // const [historyPointer, setHistoryPointer] = useState<number>(1)
   const inputRef = useRef<HTMLInputElement>();
   const setFocus = (): void => {
     const currentEl = inputRef.current;
@@ -18,35 +19,50 @@ function App() {
     }
   };
 
+  /*useEffect(() => {
+    if (historyPointer > 0) {
+      setCurrentCommand(history[historyPointer].command)
+    }
+  }, [historyPointer])*/
+
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
       const value = event.target.value
       setCurrentCommand(value)
   }
 
-  const onKeypress = async (event: KeyboardEvent<HTMLInputElement>) => {
+  const onKeyPress = async (event: KeyboardEvent<HTMLInputElement>) => {
     if(event.key === 'Enter') {
-      console.log(event, currentCommand);
+      // console.debug(event, currentCommand);
       if (currentCommand.trim() === "") {
         // empty command
-        setHistory(history.concat([{result: "", command: ""}]))
+        // setHistory(history.concat([{result: "", command: ""}]))
       } else {
         // search for command
-        const foundCommand = Commands.filter((c) => c.command === currentCommand);
+        const foundCommand = Commands.filter((c) => c.command === currentCommand.trim());
         if (foundCommand.length > 0) {
           // command found
           if (foundCommand[0].resetHistory) {
             setHistory([])
           } else {
-            setHistory(history.concat([{result: (await foundCommand[0].func()).result, command: currentCommand}]))
+            setHistory(history.concat([{result: (await foundCommand[0].func()).result, command: currentCommand.trim()}]))
           }
         } else {
           // command not found
-          setHistory(history.concat([{ result: `command not found: ${currentCommand}`, command: currentCommand}]))
+          setHistory(history.concat([{ result: `command not found: ${currentCommand}`, command: currentCommand.trim()}]))
         }
       }
       setCurrentCommand("")
     }
   }
+  /*const onKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "ArrowUp") {
+      if (history.length > 0) {
+        setHistoryPointer(history.length - historyPointer)
+      }
+    } else if (event.key === "ArrowDown") {
+
+    }
+  }*/
 
   const renderInput = () => {
     return <input
@@ -55,20 +71,9 @@ function App() {
           data-testid={"broterm-input"}
           value={currentCommand}
           onChange={onChange}
-          onKeyPress={onKeypress}
           autoFocus={true}
-          style={{
-              margin: 0,
-              marginLeft: 10,
-              fontSize: 16,
-              color: "#00ff00",
-              fontFamily: "courier new",
-              backgroundColor: "#000",
-              border: "0px solid #000",
-              padding: 0,
-              boxShadow: 'none',
-              outline: 'none'
-          }}
+          // onKeyDown={onKeyDown}
+          className={"terminal-input"}
       />
   }
 
@@ -76,12 +81,15 @@ function App() {
       <div
           onClick={() => setFocus()}
           className="terminal"
+          tabIndex={0}
+          onKeyPress={onKeyPress}
+          // onKeyUp={onKeyUp}
       >
-              <div style={{padding: 8}}>
+              <div className={"container"}>
                   {
                       history.map((c, i) => {
                           return (
-                              <div role="line" key={`${c.command}_${i}`} style={{display:"flex", justifyContent: "left", alignItems: "left", flexDirection: "column"}}>
+                              <div role="listitem" className="line" key={`${c.command}_${i}`}>
                                   <span>{TERMINAL_COMMAND_PREFIX + c.command}</span>
                                   <span style={{whiteSpace: "pre-wrap"}}>{c.result}</span>
                               </div>
@@ -89,7 +97,7 @@ function App() {
                       })
                   }
                   {
-                      <div role="last-line" style={{display:"flex", justifyContent: "left", alignItems: "left"}}>
+                      <div role="listitem" className="line last">
                           <span>{TERMINAL_COMMAND_PREFIX}</span>
                           <span>{renderInput()}</span>
                       </div>

@@ -12,14 +12,14 @@ export type CommandObjectType = {
 export enum CommandType {
 	HELP = 'help',
 	CLEAR = 'clear',
-	GEOLOCATION = 'geolocation',
+	IP = 'ip',
 	USERAGENT = 'useragent'
 }
 
 export enum CommandTypeDescription {
 	HELP = 'show all available commands',
 	CLEAR = 'clear console',
-	GEOLOCATION = 'get geolocation information',
-	USERAGENT = 'show the user agent'
+	IP = 'print your ip address',
+	USERAGENT = 'print your user agent'
 }
 
