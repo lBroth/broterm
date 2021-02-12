@@ -13,9 +13,5 @@ test('renders broterm input ', () => {
   // new line
   fireEvent.change(input, { target: { value: "" } });
   fireEvent.keyPress(input, { key: "Enter", code: 13, charCode: 13 });
-
-
-  // TODO - delete test error
-  // const error = screen.getByTestId("error");
-  // expect(error).toBeInTheDocument();
+  
 });
