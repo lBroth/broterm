@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent, useRef, useState} from 'react'
+import React, {ChangeEvent, KeyboardEvent, useEffect, useRef, useState} from 'react'
 import './App.css'
 import Commands from '../command/core'
 import {HistoryObjectType} from "../command/index.d"
@@ -24,6 +24,15 @@ function App() {
       setCurrentCommand(history[historyPointer].command)
     }
   }, [historyPointer])*/
+
+  useEffect(() => {
+    const currentEl = inputRef.current;
+    if (currentEl) {
+      // console.log(currentEl.clientHeight)
+      // currentEl.scrollTop = currentEl.clientHeight
+      currentEl.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [currentCommand, history])
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
       const value = event.target.value
@@ -71,7 +80,11 @@ function App() {
           data-testid={"broterm-input"}
           value={currentCommand}
           onChange={onChange}
-          autoFocus={true}
+          type={"text"}
+          autoCorrect={'none'}
+          autoCapitalize={'none'}
+          autoSave={'none'}
+          autoFocus
           // onKeyDown={onKeyDown}
           className={"terminal-input"}
       />
@@ -79,9 +92,9 @@ function App() {
 
   return (
       <div
-          onClick={() => setFocus()}
           className="terminal"
           tabIndex={0}
+          onClick={() => setFocus()}
           onKeyPress={onKeyPress}
           // onKeyUp={onKeyUp}
       >
