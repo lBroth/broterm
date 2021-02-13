@@ -1,7 +1,7 @@
 {
   "homepage": "https://lBroth.github.io/broterm",
   "name": "broterm",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "nanoid": "^3.1.20",
