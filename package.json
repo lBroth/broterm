@@ -2,7 +2,8 @@
   "homepage": "https://lBroth.github.io/broterm",
   "name": "broterm",
   "version": "0.2.0",
-  "private": true,
+  "private": false,
+  "author": "Broth <little.broth@yahoo.it> (https://github.com/lBroth)",
   "dependencies": {
     "nanoid": "^3.1.20",
     "react": "^17.0.1",
@@ -46,5 +47,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lBroth/broterm.git"
   }
 }
