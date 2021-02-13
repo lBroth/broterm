@@ -1,4 +1,4 @@
-import React, {ChangeEvent, KeyboardEvent, useRef, useState} from 'react'
+import React, {ChangeEvent, KeyboardEvent, useEffect, useRef, useState} from 'react'
 import './App.css'
 import Commands from '../command/core'
 import {HistoryObjectType} from "../command/index.d"
@@ -25,6 +25,12 @@ function App() {
     }
   }, [historyPointer])*/
 
+  useEffect(() => {
+    const currentEl = inputRef.current;
+    if (currentEl) {
+      currentEl.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [currentCommand])
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
       const value = event.target.value
       setCurrentCommand(value)
