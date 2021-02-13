@@ -2,6 +2,8 @@ import React from 'react';
 import {fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
+Element.prototype.scrollIntoView = jest.fn();
+
 test('renders broterm input ', () => {
   render(<App />);
   const app = screen.getByText(/broterm ~ %/i);
