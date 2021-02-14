@@ -20,7 +20,8 @@ export enum CommandType {
 	IP = 'ip',
 	USERAGENT = 'useragent',
 	SECRET = 'secret',
-	ABOUT = 'about'
+	ABOUT = 'about',
+	COVID = 'covid'
 }
 
 export enum CommandTypeDescription {
@@ -29,6 +30,7 @@ export enum CommandTypeDescription {
 	IP = 'print your ip address',
 	USERAGENT = 'print your user agent',
 	SECRET = 'generate secret by nanoid',
-	ABOUT = 'app info'
+	ABOUT = 'app info',
+	COVID = 'get covid info'
 }
 
