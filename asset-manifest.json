@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/broterm/static/css/main.0edb1886.chunk.css",
-    "main.js": "/broterm/static/js/main.52822a60.chunk.js",
-    "main.js.map": "/broterm/static/js/main.52822a60.chunk.js.map",
+    "main.js": "/broterm/static/js/main.09459807.chunk.js",
+    "main.js.map": "/broterm/static/js/main.09459807.chunk.js.map",
     "runtime-main.js": "/broterm/static/js/runtime-main.f65c57fe.js",
     "runtime-main.js.map": "/broterm/static/js/runtime-main.f65c57fe.js.map",
-    "static/js/2.523a54c6.chunk.js": "/broterm/static/js/2.523a54c6.chunk.js",
-    "static/js/2.523a54c6.chunk.js.map": "/broterm/static/js/2.523a54c6.chunk.js.map",
+    "static/js/2.8d1d03bd.chunk.js": "/broterm/static/js/2.8d1d03bd.chunk.js",
+    "static/js/2.8d1d03bd.chunk.js.map": "/broterm/static/js/2.8d1d03bd.chunk.js.map",
     "static/js/3.b43b81aa.chunk.js": "/broterm/static/js/3.b43b81aa.chunk.js",
     "static/js/3.b43b81aa.chunk.js.map": "/broterm/static/js/3.b43b81aa.chunk.js.map",
     "index.html": "/broterm/index.html",
     "static/css/main.0edb1886.chunk.css.map": "/broterm/static/css/main.0edb1886.chunk.css.map",
-    "static/js/2.523a54c6.chunk.js.LICENSE.txt": "/broterm/static/js/2.523a54c6.chunk.js.LICENSE.txt"
+    "static/js/2.8d1d03bd.chunk.js.LICENSE.txt": "/broterm/static/js/2.8d1d03bd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f65c57fe.js",
-    "static/js/2.523a54c6.chunk.js",
+    "static/js/2.8d1d03bd.chunk.js",
     "static/css/main.0edb1886.chunk.css",
-    "static/js/main.52822a60.chunk.js"
+    "static/js/main.09459807.chunk.js"
   ]
 }
