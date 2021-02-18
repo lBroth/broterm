@@ -41,23 +41,26 @@ function App() {
 
   const onKeyPress = async (event: KeyboardEvent<HTMLInputElement>) => {
     if(event.key === 'Enter') {
+      const args = currentCommand.split(" ")
+      const command = args.shift() || ""
+
       // console.debug(event, currentCommand);
-      if (currentCommand.trim() === "") {
+      if (command.trim() === "") {
         // empty command
         // setHistory(history.concat([{result: "", command: ""}]))
       } else {
         // search for command
-        const foundCommand = Commands.filter((c) => c.command === currentCommand.trim());
+        const foundCommand = Commands.filter((c) => c.command.type === command.trim());
         if (foundCommand.length > 0) {
           // command found
           if (foundCommand[0].resetHistory) {
             setHistory([])
           } else {
-            setHistory(history.concat([{result: (await foundCommand[0].func()).result, command: currentCommand.trim()}]))
+            setHistory(history.concat([{result: (await foundCommand[0].func(args)).result, command: currentCommand}]))
           }
         } else {
           // command not found
-          setHistory(history.concat([{ result: `command not found: ${currentCommand}`, command: currentCommand.trim()}]))
+          setHistory(history.concat([{ result: `command not found: ${command.trim()}`, command: currentCommand}]))
         }
       }
       setCurrentCommand("")

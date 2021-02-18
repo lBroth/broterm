@@ -1,4 +1,4 @@
-import {CommandObjectType, CommandType} from "./index.d";
+import {CommandObjectType, CommandType, CommandTypeDescription} from "./index.d";
 
 function geolocationResponseToString(json:any) {
 	return `` +
@@ -21,7 +21,7 @@ async function func() {
 }
 
 const Ip: CommandObjectType = {
-	command: CommandType.IP,
+	command: { type: CommandType.IP, description: CommandTypeDescription.IP },
 	func,
 }
 
